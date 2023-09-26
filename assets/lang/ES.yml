@@ -1,0 +1,421 @@
+loginPage:
+  user: Usuario
+  password: Contraseña
+  submit: Ingresar
+  loading: Cargando
+  registerMessage: ¿No posee una cuenta?
+  register: Regístrese aquí
+  login_failed: Usuario o contraseña inválido
+homePage:
+  cred: CRED
+  information: Nutrición y Salud
+  recipes: Recetas
+  calendar: Calendario
+  common_questions: Preguntas Frecuentes
+  support_groups: Compartiendo Experiencias
+  reminders: Recordatorios
+  suggestion_box: Buzón de Sugerencias
+  add_kid: Registre a su niño/a
+  overview_title: ¿Qué vamos a hacer hoy?
+  days: Días
+  months: Meses
+  years: Años
+  empty: Su niño/a no esta registrado/a.
+credPrincipalPage:
+  anemia_dismiss: Control de Hemoglobina
+  vaccines: Vacunas
+  appointment: Citas
+  weight_and_height: Peso y Talla
+  iron_supplement: Suplemento de Hierro
+  child_development: Desarollo Infantil
+  health_and_nutrition: Salud y Nutricion
+recipePage:
+  recipe_list: Lista de Recetas
+  add_recipe: Añadir Receta
+  download: Descargar
+  downloaded: Se ha descargado la receta con éxito
+  months: meses
+  allTag: Todas
+  fruitTag: Fruta
+  vegTag: Verduras
+  nutrientTag: Alimentos
+calendarPage:
+  title: Calendario
+  addEvent: Agregar Evento
+  validateText: Campo Obligatorio
+  eventName: Nombre del evento
+  accept: Aceptar
+  cancel: Cancelar
+  month: Mes
+  2weeks: 2 Semanas
+  week: Semana
+  datePickerTitle: Fecha del Evento
+  timePickerTitle: Hora del Evento
+createRecipePage:
+  title: Crear una receta
+  name: Nombre de la receta
+  upload_photo: Subir Foto
+  ingredients: Ingredientes
+  addIngredient: + Añadir Ingrediente
+  steps: Preparación
+  addStep: Añadir Paso
+  upload_video: + Subir Video
+  upload_recipe: Subir receta
+  choose_file: Elegir archivo...
+  add_tag: Edad Recomendada
+  choose_tag: Escoja Edad
+  added: Receta añadida
+  denied: Receta no añadida
+  validator: Campo obligatorio
+  validatorStep: Agrege al menos un paso
+  validatorIngredient: Agregue al menos un ingrediente
+addIngredient:
+  title: Ingredientes
+  find_ingredient: Buscar Ingrediente
+  choose_ingredient: Ingrediente Escogido
+  amount: Cantidad
+  unit: Unidad
+  add_ingredient: Agregar ingrediente
+  choose_amount: Escoja..
+  choose_unit: Escoja..
+  alternative: Ingredientes Alternativos
+  name: Nombre
+  addAlternative: Agregar Ingrediente Alternativo
+  addAlternativeButton: Agregar Ingrediente Alternativo
+  validateText: Campo Obligatorio
+insideRecipePage:
+  information: Recomendaciones
+  ingredients: Ingredientes
+  preparation: Preparación
+  comments: Comentarios
+  add_comment: Agregar comentario
+  warningMessageTitle: Recuerda...
+  warningMessage1: No agregar azúcar, panela, miel ni alimentos y bebidas con azúcares añadidos
+  warningMessage2: Hable a su bebé mientras le da su comida, eso lo estimula y ayuda a su desarollo
+  of: de
+chooseFamilyMember:
+  header: Elija un perfil para ver a su niño/a
+  empty: No existen registros
+  register_button: Registrar cuidador
+  title: Cuidadores
+  message: Si usted la madre o un cuidador, regístrese
+  primary: Cuidador(a) principal
+  notPrimary: Cuidador(a) secundario/a
+chooseKidPage:
+  title: Elija a su niño(a)
+  empty: No existen registros
+  message: Registra a su niño(a)
+anemiaCheckPage:
+  title: Control de Hemoglobina
+  empty: No existen registros
+  date: Fecha De Examen
+  age: Edad
+  month: Meses
+  result: Resultado
+  diagnosis: Diagnóstico
+  strict: Anemia Severa
+  moderate: Anemia Moderada
+  mild: Anemia Leve
+  without: Sin Anemia
+  underMessageOne: Recuerda darle a
+  underMessageTwo: alimentos con hierro como sangrecita e higadito.
+  goodMessage: ¡Muy bien! ¡Sigue cuidando la alimentación de
+  overMessage: Evita darle alimentos con hierro por un tiempo.
+  dialogBody: ¿Está seguro de querer eliminar este registro?
+  accept: Aceptar
+  cancel: Cancelar
+  confirmDelete: Registro eliminado correctamente
+  errorDelete: Error al eliminar el registro
+  addCheck: Agregar último control
+  moreInfo: Saber más sobre
+vaccinePage:
+  title: Vacunas
+  empty: No existen vacunas aplicadas
+  initialMsg1: Vacunar a
+  initialMsg2: es un gesto de amor.
+  waning1: La proxima vacuna de
+  waning2: es el
+  danger: tiene vacunas atrasadas, acude con él/ella a tu centro de salud para recibirlas.
+  dose_number: Dosis
+  month: Meses
+  late: Vacunas Atrasadas
+  receive: Vacunas recibidas
+  next: Próximas Vacunas
+  suggest_date: Fecha Sugerida
+  applied_date: Fecha Aplicada
+  return: Regresar
+  dialogBody: ¿Está seguro de deshacer la fecha de aplicación de esta vacuna?
+  datePickerTitle: Fecha de aplicación de vacuna
+  accept: Aceptar
+  cancel: Cancelar
+  vaccineApplied: Vacuna aplicada correctamente.
+  vaccineNotApplied: Error al aplicar la vacuna
+  confirmChangeState: La fecha de aplicación de la vacuna ha sido eliminada.
+  errorChangeState: Error al deshacer la fecha de aplicación.
+appointmentPage:
+  title: Citas
+  empty: No existen citas pendientes
+  empty2: No existen citas completadas
+  date: Date
+  description: Description
+  pending: Citas programada
+  completed: Citas atendidas
+  message: ¿La cita fue completada?
+  dialogBody: ¿Está seguro de querer eliminar esta cita?
+  dialogBody2: ¿Está seguro de deshacer la fecha de esta cita?
+  accept: Aceptar
+  cancel: Cancelar
+  confirmChangeState: La cita ahora está en estado Pendiente
+  errorChangeState: Error al deshacer la fecha.
+  confirmDelete: Cita eliminada correctamente
+  errorDelete: Error al eliminar la cita
+  confirmCompleted: Cita completada
+  deniedCompleted: Cita no completada
+  addAppointment: Nueva Cita
+  completeOptionTitle: ¿Asistió a su cita?
+  completeOptionText:
+  completeOptionYes: Si
+  completeOptionNo: No
+  reschedule: ¿Reprogramar?
+  deniedUpdate: No se puso reprogramar
+  reason: Razón
+weightHeightPage:
+  title: Peso y Talla
+  empty: No existen registros
+  weight: Peso
+  height: Talla
+  record: Registros
+  date: Fecha de Control
+  lineChart: Grafico de Lineas
+  diagnosis: Diagnóstico
+  obesity: Obesidad
+  overweight: Sobrepeso
+  normal: Normal
+  mildMalnutrition: Riesgo Nutricional
+  seriousMalnutrition: Desnutrición
+  goodMessage: ¡Muy bien! ¡Sigue cuidando el crecimiento de
+  badMessageOne: presenta
+  badMessageTwo: consulta con el profesional de salud.
+  dialogBody: ¿Está seguro de querer eliminar este registro?
+  accept: Aceptar
+  cancel: Cancelar
+  confirmDelete: Registro eliminado correctamente
+  errorDelete: Error al eliminar el registro
+  addCheck: Agreger últimos valores
+  slowGrowth: Retardo en el Crecimiento
+  riskSlowGrowth: Riesgo de Retardo en el Crecimiento
+  sinceLastMonth: desde el último control
+  growth: creció
+  gained: ganó
+  moreInfo: Saber más sobre
+ironSupplementPage:
+  title: Suplemento de Hierro
+  empty: No existen registros
+  name: Nombre
+  record: Registros
+  brand: Marca
+  dosage: Dosis
+  frecuency: Por Dia
+  date: Fecha entregada
+  dialogBody: ¿Está seguro de querer eliminar este registro?
+  accept: Aceptar
+  cancel: Cancelar
+  confirmDelete: Registro eliminado correctamente
+  errorDelete: Error al eliminar el registro
+  addPrescription: Agregar nueva prescripción
+  supplementReminderTitle: ¿Le dio el supplemento hoy?
+  supplementReminderYes: Si
+  supplementReminderNo: No
+  reason: Motivo (opcional)
+  reasonForgot: Olvide
+  reasonNoSupply: No tenia
+  reasonOther: Otro
+  motivationMessage1: Es importante que
+  motivationMessage2: consuma su suplemento de hierro todos los días para tener buenos niveles de hemoglobina
+chooseFamilyCenterPage:
+  title: Escoge una familia
+createUserPage:
+  title: Crear nueva familia
+  username: Nombre de usuario
+  password: Contraseña
+  repeat_password: Repetir contraseña
+  is_health_person: ¿Es personal de salud?
+  healt_center: Centro de Salud
+  choose_center: Escoja un Centro
+  add_user: Añadir Familia
+  confirmation_message: Usuario añadido
+  denied_message: Hubo un error
+  validateText: Campo Obligatorio
+createFamilyMember:
+  title: Registro de cuidador
+  names: Nombres
+  last_name: Apellido Paterno
+  mother_last_name: Apellido Materno
+  dni: Documento de identidad (DNI)
+  relationship: Relación con el niño/a
+  defaultDropdown: Seleccione una opción
+  isCaregiver: ¿Usted es el/la cuidador(a) principal?
+  gender: Género
+  male: Masculino
+  female: Femenino
+  yes: Si
+  no: No
+  add_photo: Añadir imagen
+  validateText: Campo Obligatorio
+  addFamilyMember: Registrar cuidador
+  confirmationMessage: Cuidador registrado/a.
+  deniedMessage: Ocurrió un error
+  father: Papá
+  mother: Mamá
+  grandmother: Abuela
+  grandfather: Abuelo
+  aunt: Tía
+  uncle: Tío
+  other: Otro (especificar)
+createKidPage:
+  title: Registrar a su niño(a)
+  names: Nombres
+  last_name: Apellido Paterno
+  mother_last_name: Apellido Materno
+  birthday: Fecha de Nacimiento
+  date: Fecha
+  weight: Peso al nacer (Kg)
+  size: Altura al nacer (cm)
+  gender: Género
+  male: Masculino
+  female: Femenino
+  boy: Niño
+  girl: Niña
+  affiliate_code: Código de Afiliado (Si no tiene usar 0)
+  add_photo: Añadir imagen
+  add_kid: Añadir niño/a
+  confirmation_message: Niño/a añadido/a
+  denied_message: Ocurrió un error
+  dateTitle: Seleccione Fecha
+  dateConfirm: Aceptar
+  dateCancel: Cancelar
+lateralMenuCenterPage:
+  add_user: Agregar Usuario
+  add_family: Agregar Familia
+  add_kid: Agregar hijo(a)
+  add_member: Agregar Miembro de la Familia
+  add_anemia_check: Agregar Resultados De Examen
+  add_vaccine: Agregar Vacunas
+  add_appointment: Agregar Cita
+  add_weight_height: Agregar Peso y Talla
+  add_iron_supplement: Agregar Suplemento de Hierro
+addAnemiaCheck:
+  title: Añadir Resultado
+  result: Resultado de hemoglobina
+  date: Fecha del examen
+  datePickerTitle: Fecha del examen
+  add: Agregar Resultados
+  validateText: Campo Obligatorio
+  confirm: Resultado agregado correctamente
+  denied: Resultado no ha podido ser agregado
+  empty: Existen campos vacíos
+  accept: Aceptar
+  cancel: Cancelar
+addVaccine:
+  title: Añadir Dosis
+  name: Vacuna
+  choose: Escoja Vacuna
+  dose: Dosis
+  add_dose: Añadir Dosis
+  validateText: Campo Obligatorio
+  date_suggested: Fecha Sugerida
+  next_dose: Número de Dosis correspondiente
+  add: Añadir Dosis
+  accept: Aceptar
+  cancel: Cancelar
+addAppointment:
+  title: Añadir Cita
+  description: Motivo de Cita
+  date: Fecha de la cita
+  datePickerTitle: Fecha de la cita
+  add: Agregar Cita
+  validateText: Campo Obligatorio
+  confirm: Cita agregada correctamente
+  denied: Cita no ha podido ser agregada
+  empty: Existen campos vacíos
+  confirmChange: Estado cambiado
+  deniedChange: Estado no cambiado
+  accept: Aceptar
+  cancel: Cancelar
+addWeightHeight:
+  title: Añadir Peso y Altura
+  weight: Peso (kg)
+  height: Altura (cm)
+  date: Fecha de medición
+  datePickerTitle: Fecha de los resultados
+  seriousMalnutrition: Desnutricion severa
+  mildMalnutrition: Desnutrición aguda
+  normal: Normal
+  overWeight: Sobrepeso
+  obesity: Obesidad
+  noApplied: No Aplica
+  add: Registrar
+  validateText: Campo Obligatorio
+  confirm: Resultados agregados correctamente
+  denied: Resultados no han podido ser agregados
+  accept: Aceptar
+  cancel: Cancelar
+  slowGrowth: Retardo en el Crecimiento
+  riskSlowGrowth: Riesgo de Retardo en el Crecimiento
+addIronSupplement:
+  title: Añadir Suplemento De Hierro
+  name: Nombre
+  choose: Escoja producto
+  type: Tipo de Supplemento
+  dosage: Dosificación
+  amount: Cantidad
+  unit: Unidades
+  add: Añadir Suplemento De Hierro
+  validateText: Campo Obligatorio
+  date: Fecha de la asignación
+  datePickerTitle: Fecha de la prescripción
+  confirm: Suplemento agregado correctamente
+  denied: Suplemento no ha podido ser agregado
+  accept: Aceptar
+  cancel: Cancelar
+  sulfate: Sulfato Ferroso (cucharadas)
+  micronutrients: Micronutrientes (sobres)
+  sulfateDrops: Gotas de Sulfato Ferroso (gotas)
+  spoonfuls: cucharadas
+  sips: sobres
+  drops: gotas
+bottomNavBar:
+  home: Inicio
+  calendar: Calendario
+  reminders: Recordatorios
+  account: Mi Perfil
+sidebar:
+  settings: Configuración
+  exit: Cerrar sesión
+settings:
+  title: Configuración
+  language: Cambiar idioma
+healthAndNutrition:
+  readMore: Leer más...
+sharedExperiences:
+  title: Compartiendo Experiencias
+  faqTag: Preguntas Frecuentes
+  suggestionsTag: Sugerencias
+  shareExperienceTag: Compartir Experiencias
+  consult: Consulta con el profesional
+  faqSubHeader: Preguntas más frecuentes
+  faqTitle1: ¿Qué puedo hacer si mi bebé se estriñe con el suplemento de hierro?
+  faqText1: Es muy importante que su bebé siga consumiendo el suplemento para prevenir la anemia, pocos niños podrían presentar algo de estreñimiento al inicio, lo recomendable es ayudar a que su caquita se ablande, agregando verdurita en las papillas le ofrece a su bebé y también asegurar que esté consumiendo suficiente leche materna y agua pura
+  faqTitle2: ¿Cómo agendo una cita en el centro de salud?
+  faqText2: No text yet
+  addButton: Añadir Experiencia
+addSharedExperience:
+  title: 
+  titleInput: Titulo
+  contentInput: Contenido
+  addButton: Añadir Experiencia
+  validate: Campo Obligatorio
+  confirmation_message: Experiencia añadido
+  denied_message: Hubo un error
+insideSharedExperience:
+  experienceBy: Experiencia de

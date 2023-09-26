@@ -1,0 +1,480 @@
+[
+    {
+        "id":0,
+        "idLocal":0,
+        "title":"Espesito de Quacker",
+        "total_likes":4,
+        "author_name":"",
+        "author_id":1,
+        "preparation":
+        [
+            {
+                "order":1,
+                "description":"Hervir ½ taza de agua"
+            },
+            {
+                "order":2,
+                "description":"Agregar las 3 cucharadas de avena disueltas en ¼ de taza de agua fría"
+            },
+            {
+                "order":3,
+                "description":"Mover la preparación mientras la avena cocina"
+            },
+            {
+                "order":4,
+                "description":"Una vez cocida la avena,  agregar la leche materna y apagar la cocina"
+            },
+            {
+                "order":5,
+                "description":"Servir"
+            }
+        ],
+        "comments":[],
+        "ingredients":
+        [
+            {
+                "id":1,
+                "amount_id":3,
+                "amount":"3",
+                "unit":"cucharadas",
+                "unit_id":4,
+                "name":"avena",
+                "alternatives":[]
+            },
+            {
+                "id":2,
+                "amount_id":3,
+                "amount":"3",
+                "unit":"cucharadas",
+                "unit_id":4,
+                "name":"leche materna",
+                "alternatives":[]
+            },
+            {
+                "id":3,
+                "amount_id":3,
+                "amount":"½",
+                "unit":"taza",
+                "unit_id":4,
+                "name":"agua",
+                "alternatives":[]
+            }
+        ],
+        "status":"aprobado",
+        "statusId":1,
+        "age_tag":
+        {
+            "id":1,
+            "value":"6-8, 9-11, 12-23"
+        },
+        "is_liked_by_me":true,
+        "url_photo":"assets/images/public/espesito.png",
+        "url_video":"assets/images/public/espesito.mov"
+    },
+    {
+        "id":0,
+        "idLocal":1,
+        "title":"Tallarines Saltados con Pollo y Brócoli ",
+        "total_likes":0,
+        "author_name":"",
+        "author_id":1,
+        "preparation":
+        [
+            {
+                "order":1,
+                "description":"Sancochar los fideos tallarín, la zanahoria y el brócoli"
+            },
+            {
+                "order":2,
+                "description":"Picar el pollo en cuadritos, la zanahoria, el brócoli y el tomate."
+            },
+            {
+                "order":3,
+                "description":"Sofreír en aceite el pollo picado."
+            },
+            {
+                "order":4,
+                "description":"Agregar la zanahoria, el tomate y el brócoli y mezclar."
+            },
+            {
+                "order":5,
+                "description":"Añadir el fideo tallarín cocido y revolver."
+            },
+            {
+                "order":6,
+                "description":"Servir"
+            }
+        ],
+        "comments":[],
+        "ingredients":
+        [
+            {
+                "id":1,
+                "amount_id":1,
+                "amount":"1",
+                "unit":"arbolito mediano",
+                "unit_id":5,
+                "name":"brócoli",
+                "alternatives":[]
+            },
+            {
+                "id":2,
+                "amount_id":1,
+                "amount":"1",
+                "unit":"trozo mediano",
+                "unit_id":6,
+                "name":"zanahoria",
+                "alternatives":[]
+            },
+            {
+                "id":3,
+                "amount_id":4,
+                "amount":"1/4",
+                "unit":"de unidad",
+                "unit_id":7,
+                "name":"tomate",
+                "alternatives":[]
+            },
+            {
+                "id":4,
+                "amount_id":2,
+                "amount":"2",
+                "unit":"cucharadas",
+                "unit_id":4,
+                "name":"pollo picado",
+                "alternatives":[]
+            },
+            {
+                "id":5,
+                "amount_id":3,
+                "amount":"3",
+                "unit":"tenedores",
+                "unit_id":8,
+                "name":"fideos sancochados",
+                "alternatives":[]
+            },
+            {
+                "id":6,
+                "amount_id":1,
+                "amount":"1",
+                "unit":"cucharadas",
+                "unit_id":4,
+                "name":"aceite vegetal",
+                "alternatives":[]
+            }
+        ],
+        "status":"aprobado",
+        "statusId":1,
+        "age_tag":
+        {
+            "id":3,
+            "value":"12-23"
+        },
+        "is_liked_by_me":false,
+        "url_photo":"assets/images/public/tallarines.png",
+        "url_video":"assets/images/public/videoreceta.mp4"
+    },
+    {
+        "id":0,
+        "idLocal":2,
+        "title":"Torrejitas de Pescado con Arveja",
+        "total_likes":1,
+        "author_name":"",
+        "author_id":1,
+        "preparation":
+        [
+            {
+                "order":1,
+                "description":"Sancochar la coliflor y picar finamente. "
+            },
+            {
+                "order":2,
+                "description":"Picar el pescado en cuadritos y mezclar con la coliflor."
+            },
+            {
+                "order":3,
+                "description":"Agregar el huevo y la harina a la mezcla y freír."
+            },
+            {
+                "order":4,
+                "description":"Servir el arroz y la arvejita partida cocida y acompañar con la torrejita."
+            },
+            {
+                "order":5,
+                "description":"Añadir la zanahoria y tomate al plato."
+            }
+        ],
+        "comments":[],
+        "ingredients":
+        [
+            {
+                "id":1,
+                "amount_id":1,
+                "amount":"1",
+                "unit":"arbolito mediano",
+                "unit_id":5,
+                "name":"coliflor",
+                "alternatives":[]
+            },
+            {
+                "id":2,
+                "amount_id":3,
+                "amount":"½",
+                "unit":"cucharadita",
+                "unit_id":3,
+                "name":"harina",
+                "alternatives":[]
+            },
+            {
+                "id":3,
+                "amount_id":3,
+                "amount":"½",
+                "unit":"",
+                "unit_id":3,
+                "name":"huevo",
+                "alternatives":[]
+            },
+            {
+                "id":4,
+                "amount_id":3,
+                "amount":"2",
+                "unit":"cucharadas",
+                "unit_id":3,
+                "name":"pescado picado",
+                "alternatives":[]
+            },
+            {
+                "id":5,
+                "amount_id":3,
+                "amount":"3",
+                "unit":"cucharadas",
+                "unit_id":3,
+                "name":"arveja partida",
+                "alternatives":[]
+            },
+            {
+                "id":6,
+                "amount_id":3,
+                "amount":"3",
+                "unit":"cucharadas",
+                "unit_id":3,
+                "name":"arroz cocido",
+                "alternatives":[]
+            },
+            {
+                "id":7,
+                "amount_id":3,
+                "amount":"1",
+                "unit":"cucharada",
+                "unit_id":3,
+                "name":"aceite vegetal",
+                "alternatives":[]
+            },
+            {
+                "id":8,
+                "amount_id":3,
+                "amount":"1",
+                "unit":"cucharadita",
+                "unit_id":3,
+                "name":"zanahoria rallada",
+                "alternatives":[]
+            },
+            {
+                "id":9,
+                "amount_id":3,
+                "amount":"1",
+                "unit":"cucharadita",
+                "unit_id":3,
+                "name":"tomate picado",
+                "alternatives":[]
+            }
+        ],
+        "status":"aprobado",
+        "statusId":1,
+        "age_tag":
+        {
+            "id":1,
+            "value":"12-23"
+        },
+        "is_liked_by_me":true,
+        "url_photo":"assets/images/public/torrejitas.png",
+        "url_video":"assets/images/public/videoreceta.mp4"
+    },
+    {
+        "id":0,
+        "idLocal":3,
+        "title":"Puré a lo Aurelia",
+        "total_likes":0,
+        "author_name":"",
+        "author_id":1,
+        "preparation":
+        [
+            {
+                "order":1,
+                "description":"Sancochar la papa, el zapallo y la zanahoria. Aplastar."
+            },
+            {
+                "order":2,
+                "description":"Agregar la leche materna y el aceite. Mezclar"
+            },
+            {
+                "order":3,
+                "description":"Añadir 1 huevo sancochado."
+            }
+        ],
+        "comments":[],
+        "ingredients":
+        [
+            {
+                "id":1,
+                "amount_id":3,
+                "amount":"1",
+                "unit":"",
+                "unit_id":4,
+                "name":"papa mediana",
+                "alternatives":[]
+            },
+            {
+                "id":2,
+                "amount_id":3,
+                "amount":"1",
+                "unit":"trozo chico",
+                "unit_id":3,
+                "name":"zapallo",
+                "alternatives":[]
+            },
+            {
+                "id":3,
+                "amount_id":3,
+                "amount":"3",
+                "unit":"cucharadas",
+                "unit_id":3,
+                "name":"leche materna",
+                "alternatives":[]
+            },
+            {
+                "id":4,
+                "amount_id":3,
+                "amount":"1",
+                "unit":"trozo",
+                "unit_id":3,
+                "name":"zanahoria",
+                "alternatives":[]
+            },
+            {
+                "id":5,
+                "amount_id":3,
+                "amount":"1",
+                "unit":"",
+                "unit_id":3,
+                "name":"huevo sancochado",
+                "alternatives":[]
+            },
+            {
+                "id":6,
+                "amount_id":3,
+                "amount":"½",
+                "unit":"cucharadita",
+                "unit_id":3,
+                "name":"aceite vegetal",
+                "alternatives":[]
+            }
+        ],
+        "status":"aprobado",
+        "statusId":1,
+        "age_tag":
+        {
+            "id":1,
+            "value":"6-8, 9-11"
+        },
+        "is_liked_by_me":false,
+        "url_photo":"assets/images/public/aurelia.jpg",
+        "url_video":"assets/images/public/videoreceta.mp4"
+    },
+    {
+        "id":0,
+        "idLocal":4,
+        "title":"Puré de Bazo",
+        "total_likes":0,
+        "author_name":"",
+        "author_id":1,
+        "preparation":
+        [
+            {
+                "order":1,
+                "description":"Sancochar el bazo y extraer el contenido."
+            },
+            {
+                "order":2,
+                "description":"Cocinar el camote y las hojas de espinaca. Aplastar."
+            },
+            {
+                "order":3,
+                "description":"Agregar el bazo y mezclar."
+            },
+            {
+                "order":4,
+                "description":"Añadir la leche y el aceite. Mezclar."
+            }
+        ],
+        "comments":[],
+        "ingredients":
+        [
+            {
+                "id":1,
+                "amount_id":3,
+                "amount":"1",
+                "unit":"",
+                "unit_id":4,
+                "name":"camote amarillo mediano",
+                "alternatives":[]
+            },
+            {
+                "id":2,
+                "amount_id":3,
+                "amount":"3",
+                "unit":"cucharadas",
+                "unit_id":3,
+                "name":"leche materna",
+                "alternatives":[]
+            },
+            {
+                "id":3,
+                "amount_id":3,
+                "amount":"3",
+                "unit":"hojas",
+                "unit_id":3,
+                "name":"espinaca",
+                "alternatives":[]
+            },
+            {
+                "id":4,
+                "amount_id":3,
+                "amount":"2",
+                "unit":"cucharadas",
+                "unit_id":3,
+                "name":"bazo",
+                "alternatives":[]
+            },
+            {
+                "id":5,
+                "amount_id":3,
+                "amount":"½",
+                "unit":"cucharadita",
+                "unit_id":3,
+                "name":"azúcar",
+                "alternatives":[]
+            }
+        ],
+        "status":"aprobado",
+        "statusId":1,
+        "age_tag":
+        {
+            "id":1,
+            "value":"6-8, 9-11"
+        },
+        "is_liked_by_me":false,
+        "url_photo":"assets/images/public/bazo.png",
+        "url_video":"assets/images/public/videoreceta.mp4"
+    }
+]

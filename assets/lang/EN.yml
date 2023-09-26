@@ -1,0 +1,424 @@
+loginPage:
+  user: User
+  password: Password
+  submit: Submit
+  loading: Loading
+  registerMessage: Don't have an account?
+  register: Sign Up
+  login_failed: Invalid username or password
+homePage:
+  cred: CRED
+  information: Nutrition and Health
+  recipes: Recipes
+  calendar: Calendar
+  progress_tracker: Progress Milestone
+  common_questions: Common Questions
+  support_groups: Sharing Experiences
+  reminders: Reminders
+  suggestion_box: Suggestion Box
+  add_kid: Register child
+  overview_title: What are we going to do today?
+  days: days
+  months: months
+  years: years
+  empty: Your child is not registered.
+credPrincipalPage:
+  anemia_dismiss: Anemia Check
+  vaccines: Vaccines
+  appointment: Appointment
+  weight_and_height: Weight and Height
+  iron_supplement: Iron Supplement
+  child_development: Early Child Development
+  health_and_nutrition: Health and Nutrition
+recipePage:
+  recipe_list: Recipe List
+  add_recipe: Add Recipe
+  download: Download
+  downloaded: The recipe has been downloaded successfully
+  months: months
+  allTag: All
+  fruitTag: Fruit
+  vegTag: Vegetables
+  nutrientTag: Foods
+CalendarPage:
+  title: Calendar
+  validateText: Please enter some text
+  eventName: Event Name
+  addEvent: Add Event
+  accept: Ok
+  cancel: Cancel
+  month: Month
+  2weeks: 2 Weeks
+  week: Week
+  datePickerTitle: Event Date
+  timePickerTitle: Event Time
+createRecipePage:
+  title: Create New Recipe
+  name: Recipe Name
+  upload_photo: Upload Photo
+  ingredients: Ingredients
+  addIngredient: + Add Ingredient
+  steps: Preparation
+  addStep: Add Step
+  upload_video: Upload Video
+  upload_recipe: Upload Recipe
+  choose_file: Choose File...
+  add_tag: Age Recommended
+  choose_tag: Choose Age
+  added: Recipe added
+  denied: Recipe denied
+  validatorName: Please enter some text
+  validatorStep: Add at least one step
+  validatorIngredient: Add at least one ingredient
+addIngredient:
+  title: Ingredients
+  find_ingredient: Find Ingredient
+  choose_ingredient: Choose Ingredient
+  amount: Amount
+  unit: Unit
+  add_ingredient: Add Ingredient
+  choose_amount: Choose..
+  choose_unit: Choose..
+  alternative: Alternative Ingredients
+  name: Name
+  addAlternative: Add Alternative Ingredient
+  addAlternativeButton: Add Alternative Ingredient
+  validateText: Please enter some text
+insideRecipePage:
+  information: Information
+  ingredients: Ingredients
+  preparation: Preparation
+  comments: Comments
+  add_comment: Add comment
+  warningMessageTitle: Remember...
+  warningMessage1: Don't add sugar, brown sugar, honey or food and drink with added sugars
+  warningMessage2: Hable a su bebé mientras le da su espesito, eso lo estimula y ayuda a su desarollo
+  of: of
+chooseFamilyMember:
+  title: Carers
+  empty: There are no registered members
+  message: If you are a caregiver, register
+  header: Select the caregiver profile
+  register_button: Register caregiver
+  primary: Primary carer
+  notPrimary: Secondary carer
+chooseKidPage:
+  title: Choose a kid
+  empty: No records
+  message: Register your kid
+anemiaCheckPage:
+  title: Anemia Check
+  empty: No records
+  date: Exam Date
+  month: Months
+  age: Age
+  result: Result
+  diagnosis: Diagnosis
+  strict: Strict Anemia
+  moderate: Moderate Anemia
+  mild: Mild Anemia
+  without: tmp
+  underMessageOne: Remember give
+  underMessageTwo: iron rich food.
+  goodMessage: Excellent! Keep taking car of your son!
+  overMessage: Avoid give your child iron rich food for a while.
+  dialogBody: Are you sure to delete this register?
+  accept: Accept
+  cancel: Cancel
+  confirmDelete: Register eliminated
+  errorDelete: Ups! Somethings Happened!
+  addCheck: Add latest check
+  moreInfo: Learn more about
+vaccinePage:
+  title: Vaccines
+  empty: No vaccines applied
+  initialMsg1: Vaccinate
+  initialMsg2: it is a love gesture
+  waning1: The next vaccination of
+  waning2: is on
+  danger: has overdue vaccinations, go with them to your health center to receive them.
+  dose_number: Dose
+  month: Months
+  late: Overdue Vaccines
+  receive: Received Vaccines
+  next: Next Vaccines
+  suggest_date: Suggest Date
+  applied_date: Applied Date
+  return: Return
+  dialogBody: Are you sure to delete this vaccine applied date?
+  datePickerTitle: Asign vaccine applied date
+  accept: Accept
+  cancel: Cancel
+  vaccineApplied: Vaccine applied!
+  vaccineNotApplied: Ups! Somethings Happened!
+  confirmChangeState: This vaccine applied date was deleted
+  errorChangeState: Ups! Somethings Happened!
+appointmentPage:
+  title: Appointments
+  empty: No records
+  empty2: No records
+  date: Date
+  description: Description
+  pending: Planned appointments
+  completed: Completed appointments
+  message: It Was Completed?
+  dialogBody: Are you sure to delete this register?
+  dialogBody2: Are you sure to undo the date?
+  accept: Accept
+  cancel: Cancel
+  confirmChangeState: Appointment now is Pending state
+  errorChangeState: Ups! Somethings Happened!
+  confirmDelete: Register eliminated
+  errorDelete: Ups! Somethings Happened!
+  confirmCompleted: Appointment Completed
+  deniedCompleted: Appointment not Completed
+  addAppointment: New Appointment
+  completeOptionTitle: Did you attend the appointment?
+  completeOptionText:
+  completeOptionYes: Yes
+  completeOptionNo: No
+  reschedule: Reschedule?
+  deniedUpdate: Unable to reschedule
+  reason: Reason
+weightHeightPage:
+  title: Weight and Height
+  empty: No records
+  weight: Weight
+  height: Height
+  record: Record
+  date: Date of Check
+  lineChart: Line Chart
+  diagnosis: Diagnosis
+  obesity: Obesity
+  overweight: Overweight
+  normal: Normal
+  mildMalnutrition: Nutritional risk
+  seriousMalnutrition: Malnutrition
+  goodMessage: Excellent! Keep taking care of the growth of
+  badMessageOne: shows
+  badMessageTwo: consult with the health professional.
+  dialogBody: Are you sure to delete this register?
+  accept: Accept
+  cancel: Cancel
+  confirmDelete: Register eliminated
+  errorDelete: Ups! Somethings Happened!
+  addCheck: Add latest measurements 
+  slowGrowth: Slow growth
+  riskSlowGrowth: Risk of slow growth
+  sinceLastMonth: since last check
+  growth: grew
+  gained: gained
+  moreInfo: Learn more about
+ironSupplementPage:
+  title: Iron Supplement
+  empty: No records
+  name: Name
+  record: Record
+  brand: Brand
+  dosage: Dosage
+  frecuency: Per Day
+  date: Deliver Date
+  dialogBody: Are you sure to delete this register?
+  accept: Accept
+  cancel: Cancel
+  confirmDelete: Register eliminated
+  errorDelete: Oops! Somethings Happened!
+  addPrescription: Add new prescription
+  supplementReminderTitle: Did you administer the supplement today?
+  supplementReminderYes: Yes
+  supplementReminderNo: No
+  reason: Reason (optional)
+  reasonForgot: Forgot
+  reasonNoSupply: Didn't have
+  reasonOther: Other
+  motivationMessage1: It is important that
+  motivationMessage2: takes their iron supplement every day to have good hemoglobin
+chooseFamilyCenterPage:
+  title: Choose a Family
+createUserPage:
+  title: Create New Family
+  username: Username
+  password: Password
+  repeat_password: Repeat Password
+  is_health_person: is health personnel?
+  healt_center: Health Center
+  choose_center: Choose Center
+  add_user: Add Family
+  confirmation_message: User added
+  denied_message: There was an error
+  validateText: Please enter some text
+createFamilyMember:
+  title: Register Family Member
+  names: Names
+  last_name: Last Name
+  mother_last_name: Mother Last Name
+  dni: ID
+  relationship: Relationship with the child
+  defaultDropdown: Select an option
+  isCaregiver: Is Caregiver?
+  gender: Gender
+  male: Male
+  female: Female
+  yes: Yes
+  no: No
+  addPhoto: Add photo
+  validateText: Please enter some text
+  addFamilyMember: Register carer
+  confirmationMessage: Carer registered
+  deniedMessage: There was an error
+  father: Father
+  mother: Mother
+  grandmother: Grandma
+  grandfather: Grandpa
+  aunt: Aunt
+  uncle: Uncle
+  other: Other (specify)
+createKidPage:
+  title: Register your Kid
+  names: Names
+  last_name: Last Name
+  mother_last_name: Mother Last Name
+  birthday: Birthday
+  date: Date
+  weight: Weight at birth (Kg)
+  size: Size at birth (cm)
+  gender: Gender
+  male: Male
+  female: Female
+  boy: Boy
+  girl: Girl
+  affiliate_code: Affiliate Code
+  add_photo: Add photo
+  add_kid: Add Kid
+  confirmation_message: Kid Added
+  denied_message: There was an error
+  dateTitle: Select Date
+  dateConfirm: Confirm
+  dateCancel: Cancel
+LateralMenuCenterPage:
+  add_user: Add User
+  add_family: Add Family
+  add_kid: Add Kid
+  add_family_member: Add Family Member
+  add_anemia_check: Add Anemia Results
+  add_vaccine: Add Vaccine
+  add_appointment: Add Appointment
+  add_weight_height: Add Weight And Height
+  add_iron_supplement: Add Iron Supplement
+addAnemiaCheck:
+  title: Add Results
+  result: Result
+  date: Date
+  datePickerTitle: Exam's date
+  add: Add Result
+  validateText: Please enter some text
+  confirm: Result added
+  denied: Ups! Somethings Happened!
+  empty: There are empty inputs
+  accept: Accept
+  cancel: Cancel
+addVaccine:
+  title: Add Dose
+  name: Vaccine
+  choose: Choose Vaccine
+  dose: Dose
+  add_dose: Add Dose
+  validateText: Please enter some text
+  date_suggested: Date Suggested
+  next_dose: Next Dose
+  add: Add Vaccine
+  accept: Accept
+  cancel: Cancel
+addAppointment:
+  title: Add Appointment
+  description: Descripción
+  date: Date
+  datePickerTitle: Appointment's date
+  add: Add Appointment
+  validateText: Please enter some text
+  confirm: Appointment added
+  denied: Somethings Happened
+  empty: There are empty inputs
+  confirmChange: State changed
+  deniedChange: State not changed
+  accept: Accept
+  cancel: Cancel
+addWeightHeight:
+  title: Add Weight And Height
+  weight: Weight (kg)
+  height: Height (cm)
+  date: Date
+  datePickerTitle: Result's date
+  seriousMalnutrition: Serious Malnutrition
+  mildMalnutrition: Mild Malnutrition
+  normal: Normal
+  overWeight: Overweight
+  obesity: Obesity
+  noApplied: Not Applied
+  add: Add
+  validateText: Please enter some text
+  confirm: Results Added
+  denied: Ups! Somethings Happened!
+  accept: Accept
+  cancel: Cancel
+  slowGrowth: Slow growth
+  riskSlowGrowth: Risk of slow growth
+addIronSupplement:
+  title: Add Iron Supplement
+  name: Name
+  choose: Choose Product
+  type: Type of Supplement
+  dosage: Dosage
+  amount: Amount
+  unit: Unit
+  add: Add Iron Supplement
+  validateText: Please enter some text
+  date: Date
+  datePickerTitle: Prescription's date
+  confirm: Iron Supplement Added
+  denied: Ups! Somethings Happened!
+  accept: Accept
+  cancel: Cancel
+  sulfate: Iron Sulfate (spoonfuls)
+  micronutrients: Micronutrients (sips)
+  sulfateDrops: Iron Sulftate Drops (drops)
+  spoonfuls:
+  sips:
+  drops:
+bottomNavBar:
+  home: Home
+  calendar: Calendar
+  reminders: Reminders
+  account: My Account
+sidebar:
+  settings: Settings
+  exit: Close session
+settings:
+  title: Settings
+  language: Change language
+healthAndNutrition:
+  readMore: Read more...
+sharedExperiences:
+  title: Sharing Experiences
+  faqTag: Frequent Questions
+  suggestionsTag: Suggestions
+  shareExperienceTag: Share Experiences
+  consult: Consult with a profesional
+  faqSubHeader: Frequently Asked Questions
+  faqTitle1: What can I do if my baby no longer wants to take the iron supplement?
+  faqText1: Es muy importante que su bebé siga consumeiendo el supplemento para prevenir la anemia, pocos niños podrían presentar algo de estreñimiento al inicio, lo recomendables es ayudar a que su caquita se ablande, agregando verdurita en las papillas le ofrece a su bebé y también asegurar que esté consumeiendo suficiente leche materna y agua pura TODO
+  faqTitle2: How do I plan an appointment in the health center?
+  faqText2: No text yet
+  addButton: Add Experience
+addSharedExperience:
+  title:
+  titleInput: Title
+  contentInput: Content
+  addButton: Add Experience
+  validate: Required
+  confirmation_message: Experience added
+  denied_message: There was an error
+insideSharedExperience:
+  experienceBy: Experience by
+progress:
+  roadmap: Roadmap
