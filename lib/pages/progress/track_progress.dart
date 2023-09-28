@@ -2,7 +2,6 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:developer';
 
-
 import 'package:flutter/material.dart';
 import 'package:perusano/pages/recipes/inside_recipes_page.dart';
 import 'package:perusano/services/apis/recipe/recipesService.dart';
@@ -160,35 +159,171 @@ class _RecipesPage extends State<TrackProgress> {
       endDrawer: LateralMenu(),
       body: SizedBox(
         height: MediaQuery.of(context).size.height,
-        child: Column(
+        child: Stack(
           children: [
-            //roadmap text
             Container(
-              margin: const EdgeInsets.fromLTRB(0, 7, 0, 0),
-              height: MediaQuery.of(context).size.height * 0.09,
+              height: MediaQuery.of(context).size.height,
+              color: Colors.grey[100],
+            ),
+            //3 buttons
+            Positioned(
+              top: 60,
               width: MediaQuery.of(context).size.width,
-              color: Colors.indigo[300]?.withOpacity(0.8),
-              child: Center(
-                child: Text(
-                  TranslateService.translate('progress.roadmap'),
-                  style: const TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.w500,
-                      fontSize: 16),
+              child: ClipPath(
+                clipper: BottomClipper(),
+                child: Container(
+                  height: 130,
+                  color: Colors.white,
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 18.0),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(100),
+                          child: Container(
+                            height: 60,
+                            width: 60,
+                            color: Colors.orange,
+                            child: Center(
+                              child: Icon(
+                                Icons.manage_accounts,
+                                size: 40,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                        ),
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(100),
+                          child: Container(
+                            height: 60,
+                            width: 60,
+                            color: Colors.deepPurpleAccent,
+                            child: Center(
+                              child: Icon(
+                                Icons.manage_accounts,
+                                size: 40,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                        ),
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(100),
+                          child: Container(
+                            height: 60,
+                            width: 60,
+                            color: Colors.green,
+                            child: Center(
+                              child: Icon(
+                                Icons.manage_accounts,
+                                size: 40,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
               ),
             ),
-            Container(
-              color: Colors.white,
-              child: Row(
-                children: [],
+            //roadmap text
+            Positioned(
+              top: 0,
+              // bottom: MediaQuery.of(context).size.height * 0.09,
+              child: Container(
+                margin: const EdgeInsets.fromLTRB(0, 3, 0, 0),
+                height: MediaQuery.of(context).size.height * 0.09,
+                width: MediaQuery.of(context).size.width,
+                color: Colors.indigo[300]?.withOpacity(0.8),
+                child: Center(
+                  child: Text(
+                    TranslateService.translate('progress.roadmap'),
+                    style: const TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 16),
+                  ),
+                ),
               ),
             ),
-
+            Positioned(
+                top: 170,
+                height: MediaQuery.of(context).size.height * 0.55,
+                // width: MediaQuery.of(context).size.width,
+                left: 10,
+                right: 10,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  //  verticalDirection: VerticalDirection.up,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(100),
+                          child: Container(
+                            height: 50,
+                            width: 50,
+                            color: Colors.deepPurpleAccent,
+                          ),
+                        ),
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(30),
+                          child: Container(
+                            height: 70,
+                            width: 250,
+                            color: Colors.greenAccent,
+                          ),
+                        ),
+                      ],
+                    )
+                  ],
+                ))
           ],
         ),
       ),
       bottomNavigationBar: BottomNavigationPage(),
     );
+  }
+}
+
+class AdditionalClipper extends CustomClipper<Path> {
+  @override
+  Path getClip(Size size) {
+    final path = Path();
+    path.moveTo(0, 0); // Start from the top-left
+    path.lineTo(0, size.height);
+    path.lineTo(size.width, size.height);
+    path.lineTo(size.width, 0);
+    path.close(); // Close the path
+    return path;
+  }
+
+  @override
+  bool shouldReclip(CustomClipper<Path> oldClipper) {
+    return false;
+  }
+}
+
+class BottomClipper extends CustomClipper<Path> {
+  @override
+  Path getClip(Size size) {
+    final path = Path();
+    path.lineTo(0, size.height - 50); // Start from the top-left
+    path.quadraticBezierTo(size.width / 2, size.height, size.width,
+        size.height - 50); // Create a quadratic Bezier curve for the bottom
+    path.lineTo(size.width, 0); // Close the path
+    return path;
+  }
+
+  @override
+  bool shouldReclip(CustomClipper<Path> oldClipper) {
+    return false;
   }
 }
