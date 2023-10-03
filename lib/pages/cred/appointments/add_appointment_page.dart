@@ -1,15 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:perusano/util/class/cred/appointments/appointmentClass.dart';
 import 'package:intl/intl.dart';
 import 'package:perusano/util/class/join/date_picker/date_picker.dart';
 import 'package:perusano/util/class/join/date_picker/i18n/date_picker_i18n.dart';
+// import 'package:timezone/browser.dart';
 
 import '../../../components/lateralMenu.dart';
 import '../../../services/apis/cred/credRegisterCenter.dart';
 import '../../../services/fileManagement/cred/appointmentFM.dart';
+import '../../../services/notificationService.dart';
 import '../../../services/translateService.dart';
 import '../../../util/globalVariables.dart';
 import '../../../util/internVariables.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
+
+import 'package:timezone/data/latest_all.dart' as tz;
+import 'package:timezone/timezone.dart' as tz;
 import '../../../util/myColors.dart';
 
 class AddAppointmentPage extends StatefulWidget {
@@ -100,7 +107,16 @@ class _AddAppointmentPage extends State<AddAppointmentPage> {
   Future<bool> addAppointment() async {
     Map localAnswer = {};
     Map globalAnswer = {};
-
+    tz.initializeTimeZones();
+    var local = tz.getLocation('Europe/London');
+    tz.setLocalLocation(local);
+    if (selectedDate.isAfter(DateTime.now()))
+      await _scheduleNotification(idKid, "Appointment Reminder",
+          "Your appointment is today!", selectedDate);
+    else {
+      await _showImmediateNotification(
+          idKid, "Appointment Reminder", "Your appointment is today!");
+    }
     AppointmentRegister register = AppointmentRegister(
         0,
         idKid,
@@ -114,9 +130,15 @@ class _AddAppointmentPage extends State<AddAppointmentPage> {
         2,
         false,
         false);
+
+    //tz.setLocalLocation(tz.getLocation(Location('Peru'));
     Map registerJson = register.toJson();
     await storage.writeRegister(registerJson);
     localAnswer = registerJson;
+    final oneDayBefore = selectedDate.subtract(Duration(days: 1));
+    if (selectedDate.isAfter(DateTime.now()))
+      await _scheduleNotification(idKid, "Appointment Reminder",
+          "Your appointment is tomorrow!", oneDayBefore);
 
     bool isConnected = await GlobalVariables.isConnected();
     if (isConnected) {
@@ -134,6 +156,53 @@ class _AddAppointmentPage extends State<AddAppointmentPage> {
     }
     return false;
   }
+
+  Future<void> _showImmediateNotification(
+      int id, String title, String body) async {
+    var androidPlatformChannelSpecifics = AndroidNotificationDetails(
+      'your channel id',
+      'your channel name',
+      importance: Importance.max,
+      priority: Priority.high,
+    );
+    // var iOSPlatformChannelSpecifics = IOSNotificationDetails();
+    var platformChannelSpecifics =
+        NotificationDetails(android: androidPlatformChannelSpecifics);
+
+    await flutterLocalNotificationsPlugin.show(
+      id,
+      title,
+      body,
+      platformChannelSpecifics,
+    );
+  }
+
+  Future<void> _scheduleNotification(
+      int id, String title, String body, DateTime scheduledDate) async {
+    var androidPlatformChannelSpecifics = AndroidNotificationDetails(
+      'your channel id',
+      'your channel name',
+      importance: Importance.max,
+      priority: Priority.high,
+    );
+    // var iOSPlatformChannelSpecifics = IOSNotificationDetails();
+    var platformChannelSpecifics =
+        NotificationDetails(android: androidPlatformChannelSpecifics);
+
+    await flutterLocalNotificationsPlugin.zonedSchedule(
+      id,
+      title,
+      body,
+      tz.TZDateTime.from(scheduledDate, tz.local),
+      platformChannelSpecifics,
+      androidAllowWhileIdle: true,
+      uiLocalNotificationDateInterpretation:
+          UILocalNotificationDateInterpretation.absoluteTime,
+    );
+  }
+  // In the _scheduleNotification function, we use the flutterLocalNotificationsPlugin to schedule a notification at the specified date and time. Adjust the notification details (e.g., title, body, channel settings) according to your app's requirements.
+  //
+  // Don't forget to initialize the flutterLocalNotificationsPlugin and configure it properly in your app. Also, make sure to handle any necessary permissions for notifications.
 
   @override
   Widget build(BuildContext context) {

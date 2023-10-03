@@ -15,6 +15,8 @@ import '../../util/globalVariables.dart';
 import 'create_recipe_page.dart';
 
 class RecipesPage extends StatefulWidget {
+  final String age;
+  RecipesPage(this.age);
   @override
   State<RecipesPage> createState() => _RecipesPage();
 }
@@ -26,7 +28,7 @@ class RecipesPage extends StatefulWidget {
 //   'recipePage.nutrientTag'
 // ];
 
-const List tags = ['recipePage.allTag', '6-8', '9-11', '12-23'];
+const List tags = ['0-2', '3-5', '6-8', '9-11', '12-23'];
 
 class _RecipesPage extends State<RecipesPage> {
   late int recipeChoosen;
@@ -40,7 +42,7 @@ class _RecipesPage extends State<RecipesPage> {
   var imageWidth = 25;
 
   final List<bool> _selectedTag = [true, false, false, false];
-  String _selectedTagValue = 'recipePage.allTag';
+  String _selectedTagValue = '0-2';
 
   var lightColor = const Color.fromRGBO(189, 236, 182, 100);
   var buttonColor = const Color.fromRGBO(61, 141, 10, 100);
@@ -71,17 +73,18 @@ class _RecipesPage extends State<RecipesPage> {
     }
     setState(() {
       data = dataFiltrada;
-      if (_selectedTagValue == 'recipePage.allTag') {
-        visibleTiles = data;
-      } else {
-        visibleTiles = data.where(
-          (recipe) {
-            return recipe['age_tag']['value']
-                .toString()
-                .contains(_selectedTagValue);
-          },
-        ).toList();
-      }
+      // if (_selectedTagValue == 'recipePage.allTag') {
+      //   visibleTiles = data;
+      // } else {
+      visibleTiles = data.where(
+        (recipe) {
+          print(_selectedTagValue);
+          return recipe['age_tag']['value']
+              .toString()
+              .contains(_selectedTagValue);
+        },
+      ).toList();
+      //   }
       // for (var recipe in data) {
       //   String dataTags = recipe['age_tag']['value'].toString();
       //   print('here');
@@ -134,9 +137,55 @@ class _RecipesPage extends State<RecipesPage> {
     setState(() {});
   }
 
+  int calculateAgeInMonths(String birthday) {
+    DateTime nacimiento = DateTime.parse(birthday);
+    DateTime fechaRegistro = DateTime.now();
+
+    int edadMeses = 0;
+
+    int anios = fechaRegistro.year - nacimiento.year;
+    if (fechaRegistro.month < nacimiento.month ||
+        (fechaRegistro.month == nacimiento.month &&
+            fechaRegistro.day < nacimiento.day)) {
+      anios--;
+    }
+
+    edadMeses = anios * 12 + (fechaRegistro.month - nacimiento.month);
+
+    return edadMeses;
+  }
+
+  int selectTagByAge(int ageInMonths, List<String> tags) {
+    if (ageInMonths <= 2) {
+      return 0; // 'recipePage.allTag'
+    } else if (ageInMonths <= 5) {
+      return 1;
+    } else if (ageInMonths <= 8) {
+      return 2; // '6-8'
+    } else if (ageInMonths <= 11) {
+      return 3; // '9-11'
+    } else {
+      return 4; // '12-23'
+    }
+  }
+
   @override
   initState() {
     super.initState();
+    loadRecipe();
+
+    setState(() {
+      int index = selectTagByAge(calculateAgeInMonths(widget.age),
+          ['0-2', '3-5', '6-8', '9-11', '12-23']);
+      visibleTiles.clear();
+      print(index);
+      // The button that is tapped is set to true, and the others to false.
+      for (int i = 0; i < _selectedTag.length; i++) {
+        _selectedTag[i] = i == index;
+      }
+      _selectedTagValue = tags[index];
+    });
+    actualizar();
     loadRecipe();
   }
 
@@ -162,51 +211,51 @@ class _RecipesPage extends State<RecipesPage> {
           padding: const EdgeInsets.fromLTRB(20, 10, 20, 20),
           child: Column(
             children: [
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: ToggleButtons(
-                  direction: Axis.horizontal,
-                  onPressed: (int index) {
-                    setState(() {
-                      visibleTiles.clear();
-                      // The button that is tapped is set to true, and the others to false.
-                      for (int i = 0; i < _selectedTag.length; i++) {
-                        _selectedTag[i] = i == index;
-                      }
-                      _selectedTagValue = tags[index];
-                    });
-                    actualizar();
-                    loadRecipe();
-                  },
-                  fillColor: Colors.white,
-                  splashColor: Colors.white,
-                  renderBorder: false,
-                  constraints: const BoxConstraints(
-                    minHeight: 40.0,
-                    minWidth: 80.0,
-                  ),
-                  isSelected: _selectedTag,
-                  children: List.generate(
-                    tags.length,
-                    (index) => Container(
-                      margin: const EdgeInsets.fromLTRB(5, 10, 5, 10),
-                      height: 40,
-                      width: 80,
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                          border: Border.all(color: Colors.blueGrey),
-                          borderRadius: BorderRadius.circular(20),
-                          color: _selectedTag[index]
-                              ? AppColors.colorRecipes
-                              : null),
-                      child: Text(
-                        TranslateService.translate(tags[index]),
-                        style: const TextStyle(color: Colors.black),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
+              // SingleChildScrollView(
+              //   scrollDirection: Axis.horizontal,
+              //   child: ToggleButtons(
+              //     direction: Axis.horizontal,
+              //     onPressed: (int index) {
+              //       setState(() {
+              //         visibleTiles.clear();
+              //         // The button that is tapped is set to true, and the others to false.
+              //         for (int i = 0; i < _selectedTag.length; i++) {
+              //           _selectedTag[i] = i == index;
+              //         }
+              //         _selectedTagValue = tags[index];
+              //       });
+              //       actualizar();
+              //       loadRecipe();
+              //     },
+              //     fillColor: Colors.white,
+              //     splashColor: Colors.white,
+              //     renderBorder: false,
+              //     constraints: const BoxConstraints(
+              //       minHeight: 40.0,
+              //       minWidth: 80.0,
+              //     ),
+              //     isSelected: _selectedTag,
+              //     children: List.generate(
+              //       tags.length,
+              //       (index) => Container(
+              //         margin: const EdgeInsets.fromLTRB(5, 10, 5, 10),
+              //         height: 40,
+              //         width: 80,
+              //         alignment: Alignment.center,
+              //         decoration: BoxDecoration(
+              //             border: Border.all(color: Colors.blueGrey),
+              //             borderRadius: BorderRadius.circular(20),
+              //             color: _selectedTag[index]
+              //                 ? AppColors.colorRecipes
+              //                 : null),
+              //         child: Text(
+              //           TranslateService.translate(tags[index]),
+              //           style: const TextStyle(color: Colors.black),
+              //         ),
+              //       ),
+              //     ),
+              //   ),
+              // ),
               Expanded(
                 child: GridView.builder(
                   itemCount: visibleTiles.length,
@@ -296,14 +345,14 @@ class _RecipesPage extends State<RecipesPage> {
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
                                     children: [
-                                      Container(
-                                        margin: const EdgeInsets.fromLTRB(
-                                            0, 0, 0, 0),
-                                        child: Text(
-                                          '${visibleTiles[index]['age_tag']['value']} ${TranslateService.translate('recipePage.months')}',
-                                          style: const TextStyle(fontSize: 10),
-                                        ),
-                                      ),
+                                      // Container(
+                                      //   margin: const EdgeInsets.fromLTRB(
+                                      //       0, 0, 0, 0),
+                                      //   child: Text(
+                                      //     '${visibleTiles[index]['age_tag']['value']} ${TranslateService.translate('recipePage.months')}',
+                                      //     style: const TextStyle(fontSize: 10),
+                                      //   ),
+                                      // ),
                                       Row(
                                         mainAxisAlignment:
                                             MainAxisAlignment.end,

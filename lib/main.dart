@@ -1,3 +1,5 @@
+import 'package:alarm/alarm.dart';
+// import 'package:android_alarm_manager/android_alarm_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -78,8 +80,13 @@ class _Start extends State<Start> {
 }
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  // await AndroidAlarmManager.initialize();
+  await Alarm.init();
+
   runApp(const MyApp());
   //await DatabaseCare().asignDatabase();
+
   await initNotifications();
 
   Future<String> Function() path = await FileManagement.localPath;

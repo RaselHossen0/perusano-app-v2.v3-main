@@ -428,7 +428,8 @@ class _HomePageState extends State<HomePage> {
                                                   context,
                                                   MaterialPageRoute(
                                                       builder: (context) =>
-                                                          RecipesPage())
+                                                          RecipesPage(
+                                                              text['dateRaw']))
                                                   // MaterialPageRoute(
                                                   //     builder: (context) => RecipesPage(
                                                   //         idKid: text['idLocal'])),

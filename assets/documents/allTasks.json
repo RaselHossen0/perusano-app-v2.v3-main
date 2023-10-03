@@ -1,0 +1,45 @@
+[
+  {
+    "day": 1,
+    "pre_complete": "",
+    "after_complete": "✅ Milestone Unlocked! ✅\nBravo! You've reached a notable landmark.\n\uD83C\uDF89 Today is your day! \uD83C\uDF89\"",
+    "questions": [
+      {
+        "category_name": "",
+        "question": "",
+        "imagePath": "",
+        "is_complete": "false"
+      },
+      {
+        "category_name": "",
+        "question": "",
+        "imagePath": "",
+        "is_complete": "false"
+      }
+    ],
+    "count": "0"
+
+  },
+  {
+    "day": 2,
+    "pre_complete": "Challenge 03 \n \n Track progress of your child to earn milestone.",
+    "after_complete": "✅ Milestone Unlocked! ✅\nBravo! You've reached a notable landmark.\n\uD83C\uDF89 Today is your day! \uD83C\uDF89\"",
+    "questions":
+    [
+      {
+        "category_name": "",
+        "question": "",
+        "imagePath": "",
+        "is_complete": "false"
+      },
+      {
+        "category_name": "",
+        "question": "",
+        "imagePath": "",
+        "is_complete": "false"
+      }
+    ],
+    "count": "0"
+
+  }
+]

@@ -145,7 +145,7 @@ class _HomeCenterPage extends State<HomeCenterPage> {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => RecipesPage()),
+                MaterialPageRoute(builder: (context) => RecipesPage('0')),
               );
             },
           ),

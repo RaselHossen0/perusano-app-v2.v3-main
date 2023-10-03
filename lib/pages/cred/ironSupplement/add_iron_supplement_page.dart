@@ -1,3 +1,5 @@
+import 'package:alarm/alarm.dart';
+import 'package:alarm/model/alarm_settings.dart';
 import 'package:flutter/material.dart';
 import 'package:perusano/util/class/cred/ironSupplement/ironSupplementClass.dart';
 import 'package:intl/intl.dart';
@@ -109,6 +111,18 @@ class _AddIronSupplementPage extends State<AddIronSupplementPage> {
   Future<bool> addIronSupplement() async {
     Map localAnswer = {};
     Map globalAnswer = {};
+    final alarmSettings = AlarmSettings(
+      id: 42,
+      dateTime: _selectedDate,
+      assetAudioPath: 'assets/alarm.mp3',
+      loopAudio: true,
+      vibrate: true,
+      fadeDuration: 3.0,
+      notificationTitle: 'Iron Supplement',
+      notificationBody: 'Feed your child iron supplement today',
+      enableNotificationOnKill: true,
+    );
+    await Alarm.set(alarmSettings: alarmSettings);
 
     Map dosage = {
       'amount': int.parse(_cantidadController.text),

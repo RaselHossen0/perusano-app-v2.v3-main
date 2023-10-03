@@ -1,9 +1,14 @@
 import 'dart:math';
 
+import 'package:charts_painter/chart.dart';
+import 'package:draw_graph/draw_graph.dart';
+import 'package:draw_graph/models/feature.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 import 'package:perusano/components/bottomNavigation.dart';
 import 'package:perusano/services/fileManagement/cred/weightHeightFM.dart';
+import 'package:stacked_bar_chart/stacked_bar_chart.dart';
 
 import '../../../services/apis/cred/credRegisterCenter.dart';
 import '../../../services/translateService.dart';
@@ -59,6 +64,7 @@ class _WeightHeightPage extends State<WeightHeightPage> {
   final double radius = 8;
 
   List<WHData> dataGrafico = [];
+  List<WHData> dataGraficoReal = [];
 
   bool presentaHistorial = false;
 
@@ -89,6 +95,7 @@ class _WeightHeightPage extends State<WeightHeightPage> {
     });
 
     await formarListaGrafico();
+    await generateFeatures();
     cargado = true;
   }
 
@@ -106,6 +113,7 @@ class _WeightHeightPage extends State<WeightHeightPage> {
         await storage.deleteRegister(idLocal);
       }
     }
+    generateFeatures();
 
     if (answer['id'] > 0) {
       return true;
@@ -275,8 +283,10 @@ class _WeightHeightPage extends State<WeightHeightPage> {
           height: value['height'].toDouble());
       setState(() {
         dataGrafico.add(clase);
+        dataGraficoReal.add(clase);
       });
     }
+    heightsDividedBy100.clear();
     List<WHData> reversedList = List.from(dataGrafico.reversed);
     dataGrafico = reversedList;
   }
@@ -1144,8 +1154,61 @@ class _WeightHeightPage extends State<WeightHeightPage> {
   initState() {
     super.initState();
     loadWeightHeight();
+    generateFeatures();
   }
 
+  List<double> heightsDividedBy100 = [];
+  List<double> generateFeatures() {
+    heightsDividedBy100.clear();
+    for (var item in dataGrafico) {
+      double heightInCM = item.height; // Assuming height is in centimeters
+      double heightDividedBy100 = heightInCM;
+      heightsDividedBy100.add(heightDividedBy100);
+    }
+
+    List<Feature> features = [
+      Feature(
+        title: "Height at months",
+        color: Color(0xffFFAB41),
+        data: heightsDividedBy100,
+      ),
+      Feature(
+        title: "Ideal Height",
+        color: Color(0xfff53d07),
+        data: [
+          0.48,
+          0.525,
+          0.57,
+          0.6,
+          0.625,
+          0.645,
+          0.66,
+          0.675,
+          0.685,
+          0.7,
+          0.715,
+          0.73,
+          0.725,
+          0.75,
+          0.765,
+          0.78,
+          0.795,
+          0.815
+        ],
+      ),
+    ];
+
+    return heightsDividedBy100;
+  }
+
+  List<Color> colors = [
+    Color(0xff4d504d),
+    Color(0xff6b79a6),
+    Color(0xffd6dcd6),
+    Color(0xff779b73),
+    Color(0xffa9dda5),
+    Color(0xff9aaced),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -1317,6 +1380,187 @@ class _WeightHeightPage extends State<WeightHeightPage> {
                             ],
                           ),
                         ),
+                        Container(
+                            margin: const EdgeInsets.fromLTRB(0, 0, 0, 15),
+                            decoration: BoxDecoration(
+                              borderRadius:
+                                  const BorderRadius.all(Radius.circular(10)),
+                              color: AppColors.colorCREDBoy,
+                              boxShadow: const [
+                                BoxShadow(
+                                  color: Colors.grey,
+                                  offset: Offset(0.0, 3.0),
+                                  blurRadius: 2,
+                                ),
+                              ],
+                            ),
+                            padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+                            child: Chart(
+                              state: ChartState<void>(
+                                data: ChartData.fromList(generateFeatures()
+                                    .map((e) => BubbleValue<void>(e.toDouble()))
+                                    .toList()),
+                                // axisMax: 9,
+                                itemOptions: BubbleItemOptions(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 2.0),
+                                  bubbleItemBuilder: (_) => BubbleItem(
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .secondary,
+                                      border: BorderSide()),
+                                  maxBarWidth: 3.0,
+                                ),
+                                backgroundDecorations: [
+                                  GridDecoration(
+                                    // showHorizontalValues: true,
+                                    showVerticalGrid: false,
+                                    horizontalAxisStep: 10,
+                                    gridColor: Theme.of(context).dividerColor,
+                                  ),
+                                  SparkLineDecoration(
+                                    lineWidth: 2.0,
+                                    lineColor:
+                                        Theme.of(context).colorScheme.primary,
+                                  ),
+                                ],
+                              ),
+                            )
+
+                            // Graph(
+                            //   GraphData(
+                            //       'Height',
+                            //       [
+                            //         GraphBar(
+                            //           DateTime(2020, 01),
+                            //           [
+                            //             GraphBarSection(200, color: Colors.pink),
+                            //           ],
+                            //         ),
+                            //         GraphBar(
+                            //           DateTime(2020, 2),
+                            //           [
+                            //             GraphBarSection(300, color: Colors.pink),
+                            //           ],
+                            //         ),
+                            //         GraphBar(
+                            //           DateTime(2020, 3),
+                            //           [
+                            //             GraphBarSection(400, color: Colors.pink),
+                            //           ],
+                            //         ),
+                            //         GraphBar(
+                            //           DateTime(2020, 4),
+                            //           [
+                            //             GraphBarSection(400, color: Colors.pink),
+                            //           ],
+                            //         ),
+                            //         GraphBar(
+                            //           DateTime(2020, 5),
+                            //           [
+                            //             GraphBarSection(700, color: Colors.pink),
+                            //           ],
+                            //         ),
+                            //         GraphBar(
+                            //           DateTime(2020, 6),
+                            //           [
+                            //             GraphBarSection(900, color: Colors.pink),
+                            //           ],
+                            //         ),
+                            //         GraphBar(
+                            //           DateTime(2020, 7),
+                            //           [
+                            //             GraphBarSection(300, color: Colors.pink),
+                            //           ],
+                            //         ),
+                            //         GraphBar(
+                            //           DateTime(2020, 8),
+                            //           [
+                            //             GraphBarSection(250, color: Colors.pink),
+                            //           ],
+                            //         ),
+                            //         GraphBar(
+                            //           DateTime(2020, 9),
+                            //           [
+                            //             GraphBarSection(300, color: Colors.pink),
+                            //           ],
+                            //         ),
+                            //         // GraphBar.fromMap({"30": {}}),
+                            //       ],
+                            //       AppColors.colorCREDBoy),
+                            //   graphType: GraphType.LineGraph,
+                            //   netLine: NetLine(
+                            //     showPointOnly: false,
+                            //     showLine: true,
+                            //     lineColor: Colors.white,
+                            //     pointBorderColor: Color(0xffFFAB41),
+                            //     coreColor: Color(0xffFFAB41),
+                            //   ),
+                            //   yLabelConfiguration: YLabelConfiguration(
+                            //     labelStyle: TextStyle(
+                            //       color: Colors.grey,
+                            //       fontSize: 11,
+                            //     ),
+                            //     interval: 10,
+                            //     labelCount: 15,
+                            //     labelMapper: (num value) {
+                            //       print(value);
+                            //       return value.toString();
+                            //     },
+                            //   ),
+                            //   xLabelConfiguration: XLabelConfiguration(
+                            //     labelStyle: TextStyle(
+                            //       color: Colors.grey,
+                            //       fontSize: 11,
+                            //     ),
+                            //     labelMapper: (DateTime date) {
+                            //       return date.month.toString();
+                            //     },
+                            //   ),
+                            //   barWidth: 14,
+                            // )
+                            // LineGraph(
+                            //   features: generateFeatures(dataGraficoReal),
+                            //   size: Size(MediaQuery.of(context).size.width, 300),
+                            //   labelX: [
+                            //     '1',
+                            //     '2',
+                            //     '3',
+                            //     '4',
+                            //     '5',
+                            //     '6',
+                            //     '7',
+                            //     '8',
+                            //     '9',
+                            //     '10',
+                            //     '11',
+                            //     '12',
+                            //     '15',
+                            //     '18',
+                            //     '21',
+                            //     '24',
+                            //     '30'
+                            //   ],
+                            //   labelY: [
+                            //     '10',
+                            //     '20',
+                            //     '30',
+                            //     '40',
+                            //     '50',
+                            //     '60',
+                            //     '70',
+                            //     '80',
+                            //     '90',
+                            //     '100'
+                            //   ],
+                            //   showDescription: false,
+                            //   graphColor: Colors.black,
+                            //   graphOpacity: 0,
+                            //   verticalFeatureDirection: true,
+                            //   // descriptionHeight: 130,
+                            // )
+
+                            ),
                         Container(
                           margin: const EdgeInsets.fromLTRB(0, 0, 0, 15),
                           decoration: BoxDecoration(
