@@ -6,6 +6,9 @@ import 'dart:typed_data';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:perusano/pages/progress/viewTasks.dart';
 import 'package:perusano/pages/recipes/inside_recipes_page.dart';
 import 'package:perusano/services/apis/recipe/recipesService.dart';
 import 'package:perusano/util/myColors.dart';
@@ -216,17 +219,24 @@ class _RecipesPage extends State<TrackProgress> {
                             ),
                           ),
                         ),
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(100),
-                          child: Container(
-                            height: 60,
-                            width: 60,
-                            color: Colors.deepPurpleAccent,
-                            child: Center(
-                              child: Icon(
-                                Icons.manage_accounts,
-                                size: 40,
-                                color: Colors.white,
+                        GestureDetector(
+                          onTap: (){
+                            print("hi");
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>viewAllTasks()));
+                          //  Get.to(()=>viewAllTasks());
+                          },
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(100),
+                            child: Container(
+                              height: 60,
+                              width: 60,
+                              color: Colors.deepPurpleAccent,
+                              child: Center(
+                                child: Icon(
+                                  Icons.manage_accounts,
+                                  size: 40,
+                                  color: Colors.white,
+                                ),
                               ),
                             ),
                           ),
